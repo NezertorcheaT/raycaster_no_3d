@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using NTC.Global.Cache;
+﻿using UnityEngine;
 
-public class Player : MonoCache
+public class Player : MonoBehaviour
 {
-    public float speed = 1f;
-    public float speedang = 10f;
-    protected override void Run()
+    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speedang = 10f;
+
+    private void FixedUpdate()
     {
         transform.position += transform.up * speed * Input.GetAxisRaw("Vertical");
         transform.Rotate(new Vector3(0, 0, speedang * Input.GetAxisRaw("Horizontal")));
