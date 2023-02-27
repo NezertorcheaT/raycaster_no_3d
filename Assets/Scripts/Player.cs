@@ -15,6 +15,5 @@ public class Player : MonoBehaviour
         transform.position += transform.up * speed * Input.GetAxisRaw("Vertical");
         transform.position -= transform.right * speed * Input.GetAxisRaw("Horizontal");
         transform.rotation *= Quaternion.Euler(0, 0, Input.GetAxis("Mouse X") * speedang);
-        //transform.Rotate(new Vector3(0, 0, speedang * Input.GetAxisRaw("Horizontal")));
     }
 }
